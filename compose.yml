@@ -1,0 +1,20 @@
+services:
+  backend:
+    build: ./backend
+    scale: 3
+
+  frontend:
+    image: nginx:1.29
+    volumes:
+      - ./frontend/dist/front/browser:/usr/share/nginx/html:ro
+      - ./frontend/static.conf:/etc/nginx/templates/default.conf.template:ro
+
+  reverse-proxy:
+    image: nginx:1.29
+    ports:
+      - "80:80"
+    volumes:
+      - ./reverse-proxy.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - backend
+      - frontend

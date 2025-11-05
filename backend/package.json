@@ -1,0 +1,11 @@
+{
+  "name": "poc-api-design",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "5.1.0"
+  }
+}
