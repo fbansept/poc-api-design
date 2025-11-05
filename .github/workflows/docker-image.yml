@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build ./backend --file Dockerfile --tag fbansept/poc-api-design:$(date +%s)
+      run: docker build ./backend -f ./backend/Dockerfile --tag fbansept/poc-api-design:$(date +%s)
 
     - name: Login to Docker Hub
       uses: docker/login-action@v3
