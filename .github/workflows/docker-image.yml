@@ -17,6 +17,7 @@ jobs:
         run: |
           TIMESTAMP=$(date +%s)
           docker build ./backend -f ./backend/Dockerfile -t fbansept/poc-api-design:$TIMESTAMP
+          docker image tag fbansept/poc-api-design:$TIMESTAMP fbansept/poc-api-design:latest
           echo "IMAGE_TAG=fbansept/poc-api-design:$TIMESTAMP" >> $GITHUB_OUTPUT
 
       - name: Login to Docker Hub
