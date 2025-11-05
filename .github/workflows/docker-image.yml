@@ -28,3 +28,6 @@ jobs:
 
       - name: Push the Docker image
         run: docker push ${{ steps.build-image.outputs.IMAGE_TAG }}
+
+      - name: Push the Docker image latest tag
+        run: docker push fbansept/poc-api-design:latest
